@@ -145,7 +145,6 @@ namespace Simulatator_ProBigD
             }
         }
 
-
         private void GameMode_Load(object sender, EventArgs e)
         {
             Random rd = new Random();
@@ -163,6 +162,7 @@ namespace Simulatator_ProBigD
             {
                 CoInC.Visible = true;
             }
+
         }
 
         private void A_DClose_Click(object sender, EventArgs e)
@@ -170,7 +170,6 @@ namespace Simulatator_ProBigD
             if (openState == false)
             {
                 openState = true;
-                opendDoor = 'A';
                 markedA.Visible = true;
                 openIncDoorRand();
                 SwitchConfirm swc = new SwitchConfirm("You wanna change your Selection, A Door to " + sugestDoor + " Door ?", "A", sugestDoor);
