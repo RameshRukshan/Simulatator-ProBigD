@@ -29,6 +29,7 @@ namespace Simulatator_ProBigD
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SwitchConfirm));
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btn_Yes = new Guna.UI2.WinForms.Guna2Button();
@@ -40,6 +41,7 @@ namespace Simulatator_ProBigD
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lbl_currentDoor = new System.Windows.Forms.Label();
             this.lbl_changeDoor = new System.Windows.Forms.Label();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -188,6 +190,10 @@ namespace Simulatator_ProBigD
             this.lbl_changeDoor.TabIndex = 6;
             this.lbl_changeDoor.Text = "B";
             // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.TargetControl = this;
+            // 
             // SwitchConfirm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,5 +235,6 @@ namespace Simulatator_ProBigD
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lbl_currentDoor;
         private System.Windows.Forms.Label lbl_changeDoor;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
     }
 }

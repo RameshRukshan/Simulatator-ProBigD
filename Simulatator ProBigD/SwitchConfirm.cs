@@ -12,10 +12,12 @@ namespace Simulatator_ProBigD
 {
     public partial class SwitchConfirm : Form
     {
-        public SwitchConfirm(string message)
+        public SwitchConfirm(string message, string cDoor, char chDoor)
         {
             InitializeComponent();
             lbl_desText.Text = message;
+            lbl_currentDoor.Text = cDoor;
+            lbl_changeDoor.Text = chDoor.ToString();
         }
 
         Boolean stat = false;

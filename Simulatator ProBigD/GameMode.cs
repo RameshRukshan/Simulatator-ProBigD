@@ -38,71 +38,123 @@ namespace Simulatator_ProBigD
             lbl_GameMessage.Visible = false;
         }
 
-        Char actDoor = 'c';
+        public void assignDoor()
+        {
+            if (rNumber % 3 == 0)
+            {
+                actDoor = 'A';
+            }else if (rNumber % 3 == 1)
+            {
+                actDoor = 'B';
+            }
+            else
+            {
+                actDoor = 'C';
+            }
+        }
+
+
+        int rNumber = 0;
+        Char actDoor = 'c', sugestDoor = 'c', opendDoor = 'C';
         Boolean actDA = false, actDB = false, actDC = false;
         Boolean openState = false;
-        Char[] incDoors = new Char[2];
+        Boolean[] incDoors = new Boolean[3];
+        Char[] remainDNum = new Char[2];
+
+        public void SelectSuggestDoor()
+        {
+            if (remainDNum[0] != opendDoor)
+            {
+                sugestDoor = remainDNum[0];
+            }
+            else
+            {
+                sugestDoor = remainDNum[1];
+            }
+        }
 
         public void checks()
         {
             if (actDA == true)
             {
                 actDoor = 'A';
-                incDoors[0] = 'B';
-                incDoors[1] = 'C';
+                incDoors[0] = false;
+                incDoors[1] = true;
+                incDoors[2] = true;
             }
             else if (actDB == true)
             {
                 actDoor = 'B';
-                incDoors[0] = 'A';
-                incDoors[1] = 'C';
+                incDoors[0] = true;
+                incDoors[1] = false;
+                incDoors[2] = true;
             }
             else
             {
                 actDoor = 'c';
-                incDoors[0] = 'B';
-                incDoors[1] = 'A';
+                incDoors[0] = true;
+                incDoors[1] = true;
+                incDoors[2] = false;
             }
+        }
 
-            // ----------------------------------------
-
-            if (actDoor == 'A')
+        public void openIncDoorRand()
+        {
+            Random rd = new Random();
+            rNumber = rd.Next();
+            if (rNumber % 3 == 0)
             {
-                A_DClose.Visible = false;
-                A_DOpen.Visible = true;
-
-                lbl_GameMessage.Visible = true;
-                lbl_GameMessage.Text = "Correct! You pik the right one";
-                lbl_GameMessage.ForeColor = Color.Green;
+                if (incDoors[0] == true && opendDoor != 'A' && actDoor != 'A') { 
+                    A_DOpen.Visible = true;
+                    A_DClose.Visible = false;
+                    remainDNum[0] = 'B'; remainDNum[1] = 'C';
+                }
+                else
+                {
+                    B_DOpen.Visible = true;
+                    B_DClose.Visible = false;
+                    remainDNum[0] = 'A'; remainDNum[1] = 'C';
+                }
             }
-
-
-            if (actDoor == 'B')
+            else if (rNumber % 3 == 1)
             {
-                B_DClose.Visible = false;
-                B_DOpen.Visible = true;
-
-                lbl_GameMessage.Visible = true;
-                lbl_GameMessage.Text = "Correct! You pik the right one";
-                lbl_GameMessage.ForeColor = Color.Green;
+                if (incDoors[1] == true && opendDoor != 'B' && actDoor != 'B')
+                {
+                    B_DOpen.Visible = true;
+                    B_DClose.Visible = false;
+                    remainDNum[0] = 'A'; remainDNum[1] = 'C';
+                }
+                else
+                {
+                    C_DOpen.Visible = true;
+                    C_DClose.Visible = false;
+                    remainDNum[0] = 'B'; remainDNum[1] = 'A';
+                }
             }
-
-
-            if (actDoor == 'C')
+            else
             {
-                C_DClose.Visible = false;
-                C_DOpen.Visible = true;
-
-                lbl_GameMessage.Visible = true;
-                lbl_GameMessage.Text = "Correct! You pik the right one";
-                lbl_GameMessage.ForeColor = Color.Green;
+                if (incDoors[2] == true && opendDoor != 'C' && actDoor != 'C')
+                {
+                    C_DOpen.Visible = true;
+                    C_DClose.Visible = false;
+                    remainDNum[0] = 'B'; remainDNum[1] = 'A';
+                }
+                else
+                {
+                    A_DOpen.Visible = true;
+                    A_DClose.Visible = false;
+                    remainDNum[0] = 'B'; remainDNum[1] = 'C';
+                }
             }
         }
 
 
         private void GameMode_Load(object sender, EventArgs e)
         {
+            Random rd = new Random();
+            rNumber = rd.Next();
             ResetImages();
+            assignDoor();
             openState = false;
             if (actDoor == 'A')
             {
@@ -121,10 +173,14 @@ namespace Simulatator_ProBigD
             if (openState == false)
             {
                 openState = true;
+                opendDoor = 'A';
                 markedA.Visible = true;
-                SwitchConfirm swc = new SwitchConfirm("You wanna change your Selection, A Door to B Door ?");
+                checks();
+                openIncDoorRand();
+                SelectSuggestDoor();
+                SwitchConfirm swc = new SwitchConfirm("You wanna change your Selection, A Door to " + sugestDoor + " Door ?", "A", sugestDoor);
                 swc.ShowDialog();
-                
+
             }
             else
             {
@@ -138,8 +194,12 @@ namespace Simulatator_ProBigD
             if (openState == false)
             {
                 openState = true;
+                opendDoor = 'B';
                 markedB.Visible = true;
-                SwitchConfirm swc = new SwitchConfirm("You wanna change your Selection, B Door to C Door ?");
+                checks();
+                openIncDoorRand();
+                SelectSuggestDoor();
+                SwitchConfirm swc = new SwitchConfirm("You wanna change your Selection, B Door to " +sugestDoor+ " Door ?", "B", sugestDoor);
                 swc.ShowDialog();
 
             }
@@ -155,8 +215,12 @@ namespace Simulatator_ProBigD
             if (openState == false)
             {
                 openState = true;
+                opendDoor = 'C';
                 markedC.Visible = true;
-                SwitchConfirm swc = new SwitchConfirm("You wanna change your Selection, A Door to C Door ?");
+                checks();
+                openIncDoorRand();
+                SelectSuggestDoor();
+                SwitchConfirm swc = new SwitchConfirm("You wanna change your Selection, C Door to " + sugestDoor + " Door ?", "C", sugestDoor);
                 swc.ShowDialog();
             }
             else

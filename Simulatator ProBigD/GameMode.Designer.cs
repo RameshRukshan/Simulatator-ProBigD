@@ -240,7 +240,7 @@ namespace Simulatator_ProBigD
             this.lbl_GameMessage.AutoSize = true;
             this.lbl_GameMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_GameMessage.ForeColor = System.Drawing.Color.Green;
-            this.lbl_GameMessage.Location = new System.Drawing.Point(199, 293);
+            this.lbl_GameMessage.Location = new System.Drawing.Point(199, 294);
             this.lbl_GameMessage.Name = "lbl_GameMessage";
             this.lbl_GameMessage.Size = new System.Drawing.Size(294, 25);
             this.lbl_GameMessage.TabIndex = 6;
