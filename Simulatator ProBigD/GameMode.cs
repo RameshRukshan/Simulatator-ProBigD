@@ -56,94 +56,91 @@ namespace Simulatator_ProBigD
 
         int rNumber = 0;
         Char actDoor = 'c', sugestDoor = 'c', opendDoor = 'C';
-        Boolean actDA = false, actDB = false, actDC = false;
         Boolean openState = false;
-        Boolean[] incDoors = new Boolean[3];
-        Char[] remainDNum = new Char[2];
-
-        public void SelectSuggestDoor()
-        {
-            if (remainDNum[0] != opendDoor)
-            {
-                sugestDoor = remainDNum[0];
-            }
-            else
-            {
-                sugestDoor = remainDNum[1];
-            }
-        }
-
-        public void checks()
-        {
-            if (actDA == true)
-            {
-                actDoor = 'A';
-                incDoors[0] = false;
-                incDoors[1] = true;
-                incDoors[2] = true;
-            }
-            else if (actDB == true)
-            {
-                actDoor = 'B';
-                incDoors[0] = true;
-                incDoors[1] = false;
-                incDoors[2] = true;
-            }
-            else
-            {
-                actDoor = 'c';
-                incDoors[0] = true;
-                incDoors[1] = true;
-                incDoors[2] = false;
-            }
-        }
+       
 
         public void openIncDoorRand()
         {
-            Random rd = new Random();
-            rNumber = rd.Next();
-            if (rNumber % 3 == 0)
+            Random r = new Random();
+            rNumber = r.Next() % 2;
+            if (actDoor == 'A' && opendDoor == 'B')
             {
-                if (incDoors[0] == true && opendDoor != 'A' && actDoor != 'A') { 
-                    A_DOpen.Visible = true;
-                    A_DClose.Visible = false;
-                    remainDNum[0] = 'B'; remainDNum[1] = 'C';
+                C_DClose.Visible = false;
+                C_DOpen.Visible = true;
+                sugestDoor = 'A';
+            }else if(actDoor == 'A' && opendDoor == 'C')
+            {
+                B_DClose.Visible = false;
+                B_DOpen.Visible = true;
+                sugestDoor = 'A';
+            }
+            else if (actDoor == 'A' && opendDoor == 'A')
+            {
+                if (rNumber == 0)
+                {
+                    C_DClose.Visible = false;
+                    C_DOpen.Visible = true;
+                    sugestDoor = 'B';
                 }
                 else
                 {
-                    B_DOpen.Visible = true;
                     B_DClose.Visible = false;
-                    remainDNum[0] = 'A'; remainDNum[1] = 'C';
+                    B_DOpen.Visible = true;
+                    sugestDoor = 'C';
                 }
             }
-            else if (rNumber % 3 == 1)
+            else if (actDoor == 'B' && opendDoor == 'C')
             {
-                if (incDoors[1] == true && opendDoor != 'B' && actDoor != 'B')
+                A_DClose.Visible = false;
+                A_DOpen.Visible = true;
+                sugestDoor = 'B';
+            }
+            else if (actDoor == 'B' && opendDoor == 'A')
+            {
+                C_DClose.Visible = false;
+                C_DOpen.Visible = true;
+                sugestDoor = 'B';
+            }
+            else if (actDoor == 'B' && opendDoor == 'B')
+            {
+                if (rNumber == 0)
                 {
-                    B_DOpen.Visible = true;
-                    B_DClose.Visible = false;
-                    remainDNum[0] = 'A'; remainDNum[1] = 'C';
+                    A_DClose.Visible = false;
+                    A_DOpen.Visible = true;
+                    sugestDoor = 'C';
                 }
                 else
                 {
-                    C_DOpen.Visible = true;
                     C_DClose.Visible = false;
-                    remainDNum[0] = 'B'; remainDNum[1] = 'A';
+                    C_DOpen.Visible = true;
+                    sugestDoor = 'A';
                 }
             }
-            else
+            else if (actDoor == 'C' && opendDoor == 'A')
             {
-                if (incDoors[2] == true && opendDoor != 'C' && actDoor != 'C')
+                B_DClose.Visible = false;
+                B_DOpen.Visible = true;
+                sugestDoor = 'C';
+            }
+            else if (actDoor == 'C' && opendDoor == 'B')
+            {
+                A_DClose.Visible = false;
+                A_DOpen.Visible = true;
+                sugestDoor = 'C';
+            }
+            else if (actDoor == 'C' && opendDoor == 'C')
+            {
+                if (rNumber == 0)
                 {
-                    C_DOpen.Visible = true;
-                    C_DClose.Visible = false;
-                    remainDNum[0] = 'B'; remainDNum[1] = 'A';
+                    B_DClose.Visible = false;
+                    B_DOpen.Visible = true;
+                    sugestDoor = 'A';
                 }
                 else
                 {
-                    A_DOpen.Visible = true;
                     A_DClose.Visible = false;
-                    remainDNum[0] = 'B'; remainDNum[1] = 'C';
+                    A_DOpen.Visible = true;
+                    sugestDoor = 'B';
                 }
             }
         }
@@ -175,9 +172,7 @@ namespace Simulatator_ProBigD
                 openState = true;
                 opendDoor = 'A';
                 markedA.Visible = true;
-                checks();
                 openIncDoorRand();
-                SelectSuggestDoor();
                 SwitchConfirm swc = new SwitchConfirm("You wanna change your Selection, A Door to " + sugestDoor + " Door ?", "A", sugestDoor);
                 swc.ShowDialog();
 
@@ -196,9 +191,7 @@ namespace Simulatator_ProBigD
                 openState = true;
                 opendDoor = 'B';
                 markedB.Visible = true;
-                checks();
                 openIncDoorRand();
-                SelectSuggestDoor();
                 SwitchConfirm swc = new SwitchConfirm("You wanna change your Selection, B Door to " +sugestDoor+ " Door ?", "B", sugestDoor);
                 swc.ShowDialog();
 
@@ -217,9 +210,7 @@ namespace Simulatator_ProBigD
                 openState = true;
                 opendDoor = 'C';
                 markedC.Visible = true;
-                checks();
                 openIncDoorRand();
-                SelectSuggestDoor();
                 SwitchConfirm swc = new SwitchConfirm("You wanna change your Selection, C Door to " + sugestDoor + " Door ?", "C", sugestDoor);
                 swc.ShowDialog();
             }
