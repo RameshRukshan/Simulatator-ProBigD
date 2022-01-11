@@ -200,6 +200,7 @@ namespace Simulatator_ProBigD
 
         private void GameMode_Load(object sender, EventArgs e)
         {
+            dataFile.incrRound();
             round = dataFile.readRound();
             lbl_round.Text = ("Round " + round.ToString());
             Random rd = new Random();
@@ -217,6 +218,13 @@ namespace Simulatator_ProBigD
             {
                 CoInC.Visible = true;
             }
+        }
+
+        private void btn_newRound_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            GameMode gam = new GameMode();
+            gam.Show();
         }
 
         private void A_DClose_Click(object sender, EventArgs e)

@@ -58,9 +58,9 @@ namespace Simulatator_ProBigD
 
         public void incCount()
         {
-            int count = readRound();
+            int count = readCorrectAns();
             count = count + 1;
-            writeRoundNum(count);
+            writeCorrectAns(count);
         }
 
     }

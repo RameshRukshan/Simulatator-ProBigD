@@ -20,7 +20,6 @@ namespace Simulatator_ProBigD
         private void btn_gameMode_Click(object sender, EventArgs e)
         {
             files dataFile = new files();
-            dataFile.incrRound();
             GameMode gm = new GameMode();
             gm.ShowDialog();
         }

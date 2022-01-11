@@ -48,6 +48,7 @@ namespace Simulatator_ProBigD
             this.markedB = new Guna.UI2.WinForms.Guna2PictureBox();
             this.markedC = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lbl_round = new System.Windows.Forms.Label();
+            this.btn_newRound = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.A_DOpen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B_DOpen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.C_DOpen)).BeginInit();
@@ -300,12 +301,41 @@ namespace Simulatator_ProBigD
             this.lbl_round.TabIndex = 6;
             this.lbl_round.Text = "Round 01";
             // 
+            // btn_newRound
+            // 
+            this.btn_newRound.Animated = true;
+            this.btn_newRound.AutoRoundedCorners = true;
+            this.btn_newRound.BackColor = System.Drawing.Color.Transparent;
+            this.btn_newRound.BorderRadius = 14;
+            this.btn_newRound.CheckedState.Parent = this.btn_newRound;
+            this.btn_newRound.CustomImages.Parent = this.btn_newRound;
+            this.btn_newRound.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_newRound.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_newRound.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_newRound.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_newRound.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_newRound.DisabledState.Parent = this.btn_newRound;
+            this.btn_newRound.FillColor = System.Drawing.Color.Silver;
+            this.btn_newRound.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_newRound.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_newRound.ForeColor = System.Drawing.Color.White;
+            this.btn_newRound.HoverState.Parent = this.btn_newRound;
+            this.btn_newRound.Location = new System.Drawing.Point(122, 385);
+            this.btn_newRound.Name = "btn_newRound";
+            this.btn_newRound.ShadowDecoration.Parent = this.btn_newRound;
+            this.btn_newRound.Size = new System.Drawing.Size(411, 31);
+            this.btn_newRound.TabIndex = 8;
+            this.btn_newRound.Text = "Play New Round";
+            this.btn_newRound.UseTransparentBackground = true;
+            this.btn_newRound.Click += new System.EventHandler(this.btn_newRound_Click);
+            // 
             // GameMode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(713, 450);
+            this.ClientSize = new System.Drawing.Size(713, 530);
+            this.Controls.Add(this.btn_newRound);
             this.Controls.Add(this.markedC);
             this.Controls.Add(this.markedB);
             this.Controls.Add(this.markedA);
@@ -365,5 +395,6 @@ namespace Simulatator_ProBigD
         private Guna.UI2.WinForms.Guna2PictureBox markedB;
         private Guna.UI2.WinForms.Guna2PictureBox markedC;
         private System.Windows.Forms.Label lbl_round;
+        private Guna.UI2.WinForms.Guna2GradientButton btn_newRound;
     }
 }
