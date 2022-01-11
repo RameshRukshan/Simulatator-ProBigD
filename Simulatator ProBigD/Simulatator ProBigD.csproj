@@ -68,6 +68,7 @@
     <Compile Include="Error.Designer.cs">
       <DependentUpon>Error.cs</DependentUpon>
     </Compile>
+    <Compile Include="files.cs" />
     <Compile Include="GameMode.cs">
       <SubType>Form</SubType>
     </Compile>

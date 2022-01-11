@@ -17,6 +17,8 @@ namespace Simulatator_ProBigD
             InitializeComponent();
         }
 
+        files dataFile = new files();
+
         public void ResetImages()
         {
             A_DOpen.Visible = false;
@@ -54,7 +56,7 @@ namespace Simulatator_ProBigD
         }
 
 
-        int rNumber = 0;
+        int rNumber = 0, round;
         Char actDoor = 'c', sugestDoor = 'c', opendDoor = 'C';
         Boolean openState = false;
        
@@ -143,10 +145,63 @@ namespace Simulatator_ProBigD
                     sugestDoor = 'B';
                 }
             }
+
+            dataFile.writeSelectedtDoor(opendDoor.ToString());
+        }
+
+        public void checkCorrectDoor()
+        {
+            if (opendDoor == actDoor)
+            {
+                lbl_GameMessage.Text = "Correct! You pik the right one";
+                lbl_GameMessage.ForeColor = Color.Green;
+                lbl_GameMessage.Visible = true;
+                dataFile.incCount();
+            }
+            else
+            {
+                lbl_GameMessage.Text = "Wrongt! You pik the wrong one";
+                lbl_GameMessage.ForeColor = Color.Red;
+                lbl_GameMessage.Visible = true;
+            }
+        }
+
+        public void openDoor()
+        {
+            if (opendDoor == 'A')
+            {
+                markedA.Visible = true;
+            }else if (opendDoor == 'B')
+            {
+                markedB.Visible = true;
+            }
+            else if (opendDoor == 'C')
+            {
+                markedC.Visible = true;
+            }
+
+            A_DOpen.Visible = true;
+            A_DClose.Visible = false;
+           
+            B_DClose.Visible = false;
+            B_DOpen.Visible = true;
+            
+            C_DClose.Visible = false;
+            C_DOpen.Visible = true;
+            
+        }
+
+        public void resetLable()
+        {
+            markedA.Visible = false;
+            markedB.Visible = false;
+            markedC.Visible = false;
         }
 
         private void GameMode_Load(object sender, EventArgs e)
         {
+            round = dataFile.readRound();
+            lbl_round.Text = ("Round " + round.ToString());
             Random rd = new Random();
             rNumber = rd.Next();
             ResetImages();
@@ -162,7 +217,6 @@ namespace Simulatator_ProBigD
             {
                 CoInC.Visible = true;
             }
-
         }
 
         private void A_DClose_Click(object sender, EventArgs e)
@@ -171,10 +225,14 @@ namespace Simulatator_ProBigD
             {
                 openState = true;
                 markedA.Visible = true;
+                opendDoor = 'A';
                 openIncDoorRand();
                 SwitchConfirm swc = new SwitchConfirm("You wanna change your Selection, A Door to " + sugestDoor + " Door ?", "A", sugestDoor);
                 swc.ShowDialog();
-
+                resetLable();
+                opendDoor = swc.returnDoor();
+                checkCorrectDoor();
+                openDoor();
             }
             else
             {
@@ -193,7 +251,10 @@ namespace Simulatator_ProBigD
                 openIncDoorRand();
                 SwitchConfirm swc = new SwitchConfirm("You wanna change your Selection, B Door to " +sugestDoor+ " Door ?", "B", sugestDoor);
                 swc.ShowDialog();
-
+                resetLable();
+                opendDoor = swc.returnDoor();
+                checkCorrectDoor();
+                openDoor();
             }
             else
             {
@@ -212,6 +273,10 @@ namespace Simulatator_ProBigD
                 openIncDoorRand();
                 SwitchConfirm swc = new SwitchConfirm("You wanna change your Selection, C Door to " + sugestDoor + " Door ?", "C", sugestDoor);
                 swc.ShowDialog();
+                resetLable();
+                opendDoor = swc.returnDoor();
+                checkCorrectDoor();
+                openDoor();
             }
             else
             {

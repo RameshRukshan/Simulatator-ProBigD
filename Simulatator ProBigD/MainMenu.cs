@@ -19,6 +19,8 @@ namespace Simulatator_ProBigD
 
         private void btn_gameMode_Click(object sender, EventArgs e)
         {
+            files dataFile = new files();
+            dataFile.incrRound();
             GameMode gm = new GameMode();
             gm.ShowDialog();
         }
@@ -27,6 +29,13 @@ namespace Simulatator_ProBigD
         {
             SimulatationMode sm = new SimulatationMode();
             sm.ShowDialog();
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            files dataFile = new files();
+            dataFile.writeRoundNum(0);
+            dataFile.writeCorrectAns(0);
         }
     }
 }

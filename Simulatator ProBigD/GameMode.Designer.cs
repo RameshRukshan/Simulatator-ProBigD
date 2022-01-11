@@ -47,6 +47,7 @@ namespace Simulatator_ProBigD
             this.markedA = new Guna.UI2.WinForms.Guna2PictureBox();
             this.markedB = new Guna.UI2.WinForms.Guna2PictureBox();
             this.markedC = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lbl_round = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.A_DOpen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B_DOpen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.C_DOpen)).BeginInit();
@@ -78,7 +79,7 @@ namespace Simulatator_ProBigD
             this.A_DOpen.BackColor = System.Drawing.Color.Transparent;
             this.A_DOpen.Image = ((System.Drawing.Image)(resources.GetObject("A_DOpen.Image")));
             this.A_DOpen.ImageRotate = 0F;
-            this.A_DOpen.Location = new System.Drawing.Point(52, 59);
+            this.A_DOpen.Location = new System.Drawing.Point(52, 89);
             this.A_DOpen.Name = "A_DOpen";
             this.A_DOpen.ShadowDecoration.Parent = this.A_DOpen;
             this.A_DOpen.Size = new System.Drawing.Size(181, 231);
@@ -92,7 +93,7 @@ namespace Simulatator_ProBigD
             this.B_DOpen.BackColor = System.Drawing.Color.Transparent;
             this.B_DOpen.Image = ((System.Drawing.Image)(resources.GetObject("B_DOpen.Image")));
             this.B_DOpen.ImageRotate = 0F;
-            this.B_DOpen.Location = new System.Drawing.Point(239, 59);
+            this.B_DOpen.Location = new System.Drawing.Point(239, 89);
             this.B_DOpen.Name = "B_DOpen";
             this.B_DOpen.ShadowDecoration.Parent = this.B_DOpen;
             this.B_DOpen.Size = new System.Drawing.Size(181, 231);
@@ -106,7 +107,7 @@ namespace Simulatator_ProBigD
             this.C_DOpen.BackColor = System.Drawing.Color.Transparent;
             this.C_DOpen.Image = ((System.Drawing.Image)(resources.GetObject("C_DOpen.Image")));
             this.C_DOpen.ImageRotate = 0F;
-            this.C_DOpen.Location = new System.Drawing.Point(426, 59);
+            this.C_DOpen.Location = new System.Drawing.Point(426, 89);
             this.C_DOpen.Name = "C_DOpen";
             this.C_DOpen.ShadowDecoration.Parent = this.C_DOpen;
             this.C_DOpen.Size = new System.Drawing.Size(181, 231);
@@ -120,7 +121,7 @@ namespace Simulatator_ProBigD
             this.CoInA.BackColor = System.Drawing.Color.Transparent;
             this.CoInA.Image = ((System.Drawing.Image)(resources.GetObject("CoInA.Image")));
             this.CoInA.ImageRotate = 0F;
-            this.CoInA.Location = new System.Drawing.Point(87, 158);
+            this.CoInA.Location = new System.Drawing.Point(87, 188);
             this.CoInA.Name = "CoInA";
             this.CoInA.ShadowDecoration.Parent = this.CoInA;
             this.CoInA.Size = new System.Drawing.Size(65, 65);
@@ -134,7 +135,7 @@ namespace Simulatator_ProBigD
             this.CoInB.BackColor = System.Drawing.Color.Transparent;
             this.CoInB.Image = ((System.Drawing.Image)(resources.GetObject("CoInB.Image")));
             this.CoInB.ImageRotate = 0F;
-            this.CoInB.Location = new System.Drawing.Point(277, 158);
+            this.CoInB.Location = new System.Drawing.Point(277, 188);
             this.CoInB.Name = "CoInB";
             this.CoInB.ShadowDecoration.Parent = this.CoInB;
             this.CoInB.Size = new System.Drawing.Size(65, 65);
@@ -148,7 +149,7 @@ namespace Simulatator_ProBigD
             this.CoInC.BackColor = System.Drawing.Color.Transparent;
             this.CoInC.Image = ((System.Drawing.Image)(resources.GetObject("CoInC.Image")));
             this.CoInC.ImageRotate = 0F;
-            this.CoInC.Location = new System.Drawing.Point(459, 158);
+            this.CoInC.Location = new System.Drawing.Point(459, 188);
             this.CoInC.Name = "CoInC";
             this.CoInC.ShadowDecoration.Parent = this.CoInC;
             this.CoInC.Size = new System.Drawing.Size(65, 65);
@@ -163,7 +164,7 @@ namespace Simulatator_ProBigD
             this.A_DClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.A_DClose.Image = ((System.Drawing.Image)(resources.GetObject("A_DClose.Image")));
             this.A_DClose.ImageRotate = 0F;
-            this.A_DClose.Location = new System.Drawing.Point(56, 62);
+            this.A_DClose.Location = new System.Drawing.Point(56, 92);
             this.A_DClose.Name = "A_DClose";
             this.A_DClose.ShadowDecoration.Parent = this.A_DClose;
             this.A_DClose.Size = new System.Drawing.Size(164, 228);
@@ -179,7 +180,7 @@ namespace Simulatator_ProBigD
             this.B_DClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.B_DClose.Image = ((System.Drawing.Image)(resources.GetObject("B_DClose.Image")));
             this.B_DClose.ImageRotate = 0F;
-            this.B_DClose.Location = new System.Drawing.Point(241, 59);
+            this.B_DClose.Location = new System.Drawing.Point(241, 89);
             this.B_DClose.Name = "B_DClose";
             this.B_DClose.ShadowDecoration.Parent = this.B_DClose;
             this.B_DClose.Size = new System.Drawing.Size(164, 228);
@@ -195,7 +196,7 @@ namespace Simulatator_ProBigD
             this.C_DClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.C_DClose.Image = ((System.Drawing.Image)(resources.GetObject("C_DClose.Image")));
             this.C_DClose.ImageRotate = 0F;
-            this.C_DClose.Location = new System.Drawing.Point(430, 57);
+            this.C_DClose.Location = new System.Drawing.Point(430, 87);
             this.C_DClose.Name = "C_DClose";
             this.C_DClose.ShadowDecoration.Parent = this.C_DClose;
             this.C_DClose.Size = new System.Drawing.Size(164, 228);
@@ -209,7 +210,7 @@ namespace Simulatator_ProBigD
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(115, 33);
+            this.label1.Location = new System.Drawing.Point(115, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 26);
             this.label1.TabIndex = 5;
@@ -219,7 +220,7 @@ namespace Simulatator_ProBigD
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(314, 33);
+            this.label2.Location = new System.Drawing.Point(314, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 26);
             this.label2.TabIndex = 5;
@@ -229,7 +230,7 @@ namespace Simulatator_ProBigD
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(496, 30);
+            this.label3.Location = new System.Drawing.Point(496, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 26);
             this.label3.TabIndex = 5;
@@ -240,7 +241,7 @@ namespace Simulatator_ProBigD
             this.lbl_GameMessage.AutoSize = true;
             this.lbl_GameMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_GameMessage.ForeColor = System.Drawing.Color.Green;
-            this.lbl_GameMessage.Location = new System.Drawing.Point(199, 294);
+            this.lbl_GameMessage.Location = new System.Drawing.Point(199, 324);
             this.lbl_GameMessage.Name = "lbl_GameMessage";
             this.lbl_GameMessage.Size = new System.Drawing.Size(294, 25);
             this.lbl_GameMessage.TabIndex = 6;
@@ -251,7 +252,7 @@ namespace Simulatator_ProBigD
             this.markedA.BackColor = System.Drawing.Color.Transparent;
             this.markedA.Image = ((System.Drawing.Image)(resources.GetObject("markedA.Image")));
             this.markedA.ImageRotate = 0F;
-            this.markedA.Location = new System.Drawing.Point(70, 240);
+            this.markedA.Location = new System.Drawing.Point(70, 270);
             this.markedA.Name = "markedA";
             this.markedA.ShadowDecoration.Parent = this.markedA;
             this.markedA.Size = new System.Drawing.Size(36, 47);
@@ -265,7 +266,7 @@ namespace Simulatator_ProBigD
             this.markedB.BackColor = System.Drawing.Color.Transparent;
             this.markedB.Image = ((System.Drawing.Image)(resources.GetObject("markedB.Image")));
             this.markedB.ImageRotate = 0F;
-            this.markedB.Location = new System.Drawing.Point(255, 240);
+            this.markedB.Location = new System.Drawing.Point(255, 270);
             this.markedB.Name = "markedB";
             this.markedB.ShadowDecoration.Parent = this.markedB;
             this.markedB.Size = new System.Drawing.Size(36, 47);
@@ -279,7 +280,7 @@ namespace Simulatator_ProBigD
             this.markedC.BackColor = System.Drawing.Color.Transparent;
             this.markedC.Image = ((System.Drawing.Image)(resources.GetObject("markedC.Image")));
             this.markedC.ImageRotate = 0F;
-            this.markedC.Location = new System.Drawing.Point(444, 240);
+            this.markedC.Location = new System.Drawing.Point(444, 270);
             this.markedC.Name = "markedC";
             this.markedC.ShadowDecoration.Parent = this.markedC;
             this.markedC.Size = new System.Drawing.Size(36, 47);
@@ -287,6 +288,17 @@ namespace Simulatator_ProBigD
             this.markedC.TabIndex = 7;
             this.markedC.TabStop = false;
             this.markedC.UseTransparentBackground = true;
+            // 
+            // lbl_round
+            // 
+            this.lbl_round.AutoSize = true;
+            this.lbl_round.Font = new System.Drawing.Font("Adobe Gothic Std B", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_round.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lbl_round.Location = new System.Drawing.Point(65, 22);
+            this.lbl_round.Name = "lbl_round";
+            this.lbl_round.Size = new System.Drawing.Size(94, 24);
+            this.lbl_round.TabIndex = 6;
+            this.lbl_round.Text = "Round 01";
             // 
             // GameMode
             // 
@@ -297,6 +309,7 @@ namespace Simulatator_ProBigD
             this.Controls.Add(this.markedC);
             this.Controls.Add(this.markedB);
             this.Controls.Add(this.markedA);
+            this.Controls.Add(this.lbl_round);
             this.Controls.Add(this.lbl_GameMessage);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -351,5 +364,6 @@ namespace Simulatator_ProBigD
         private Guna.UI2.WinForms.Guna2PictureBox markedA;
         private Guna.UI2.WinForms.Guna2PictureBox markedB;
         private Guna.UI2.WinForms.Guna2PictureBox markedC;
+        private System.Windows.Forms.Label lbl_round;
     }
 }

@@ -12,15 +12,23 @@ namespace Simulatator_ProBigD
 {
     public partial class SwitchConfirm : Form
     {
+        string chDoor, cDoor;
+
+
         public SwitchConfirm(string message, string cDoor, char chDoor)
         {
             InitializeComponent();
             lbl_desText.Text = message;
             lbl_currentDoor.Text = cDoor;
             lbl_changeDoor.Text = chDoor.ToString();
+            this.chDoor = chDoor.ToString();
+            this.cDoor = cDoor;
         }
 
-        Boolean stat = false;
+        files dataFile = new files();
+
+        char door;
+
         private void SwitchConfirm_Load(object sender, EventArgs e)
         {
 
@@ -28,14 +36,20 @@ namespace Simulatator_ProBigD
 
         private void btn_Yes_Click(object sender, EventArgs e)
         {
-            stat = true;
+            door = Convert.ToChar(chDoor);
+            dataFile.writeSelectedtDoor(chDoor);
             this.Close();
         }
 
         private void brn_No_Click(object sender, EventArgs e)
         {
-            stat = false;
+            door = Convert.ToChar(cDoor);
             this.Close();
+        }
+
+        public char returnDoor()
+        {
+            return door;
         }
     }
 }
