@@ -49,6 +49,12 @@ namespace Simulatator_ProBigD
             this.markedC = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lbl_round = new System.Windows.Forms.Label();
             this.btn_newRound = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_count = new System.Windows.Forms.Label();
+            this.lbl_rounds = new System.Windows.Forms.Label();
+            this.lbl_rate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.A_DOpen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B_DOpen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.C_DOpen)).BeginInit();
@@ -69,7 +75,7 @@ namespace Simulatator_ProBigD
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(656, 12);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(609, 14);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
@@ -320,7 +326,7 @@ namespace Simulatator_ProBigD
             this.btn_newRound.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_newRound.ForeColor = System.Drawing.Color.White;
             this.btn_newRound.HoverState.Parent = this.btn_newRound;
-            this.btn_newRound.Location = new System.Drawing.Point(122, 385);
+            this.btn_newRound.Location = new System.Drawing.Point(122, 374);
             this.btn_newRound.Name = "btn_newRound";
             this.btn_newRound.ShadowDecoration.Parent = this.btn_newRound;
             this.btn_newRound.Size = new System.Drawing.Size(411, 31);
@@ -329,12 +335,80 @@ namespace Simulatator_ProBigD
             this.btn_newRound.UseTransparentBackground = true;
             this.btn_newRound.Click += new System.EventHandler(this.btn_newRound_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(116, 432);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 22);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Play Rounds :- ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(116, 467);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(157, 22);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Correct Rounds :- ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(373, 449);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(144, 22);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Wining Rate :- ";
+            // 
+            // lbl_count
+            // 
+            this.lbl_count.AutoSize = true;
+            this.lbl_count.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_count.Location = new System.Drawing.Point(274, 468);
+            this.lbl_count.Name = "lbl_count";
+            this.lbl_count.Size = new System.Drawing.Size(20, 22);
+            this.lbl_count.TabIndex = 9;
+            this.lbl_count.Text = "0";
+            // 
+            // lbl_rounds
+            // 
+            this.lbl_rounds.AutoSize = true;
+            this.lbl_rounds.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_rounds.Location = new System.Drawing.Point(274, 432);
+            this.lbl_rounds.Name = "lbl_rounds";
+            this.lbl_rounds.Size = new System.Drawing.Size(20, 22);
+            this.lbl_rounds.TabIndex = 9;
+            this.lbl_rounds.Text = "0";
+            // 
+            // lbl_rate
+            // 
+            this.lbl_rate.AutoSize = true;
+            this.lbl_rate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_rate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbl_rate.Location = new System.Drawing.Point(517, 450);
+            this.lbl_rate.Name = "lbl_rate";
+            this.lbl_rate.Size = new System.Drawing.Size(60, 22);
+            this.lbl_rate.TabIndex = 9;
+            this.lbl_rate.Text = "100%";
+            // 
             // GameMode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(713, 530);
+            this.ClientSize = new System.Drawing.Size(671, 530);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lbl_rounds);
+            this.Controls.Add(this.lbl_rate);
+            this.Controls.Add(this.lbl_count);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_newRound);
             this.Controls.Add(this.markedC);
             this.Controls.Add(this.markedB);
@@ -396,5 +470,11 @@ namespace Simulatator_ProBigD
         private Guna.UI2.WinForms.Guna2PictureBox markedC;
         private System.Windows.Forms.Label lbl_round;
         private Guna.UI2.WinForms.Guna2GradientButton btn_newRound;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_count;
+        private System.Windows.Forms.Label lbl_rounds;
+        private System.Windows.Forms.Label lbl_rate;
     }
 }

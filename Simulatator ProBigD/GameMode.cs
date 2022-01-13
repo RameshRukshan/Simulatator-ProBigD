@@ -56,7 +56,8 @@ namespace Simulatator_ProBigD
         }
 
 
-        int rNumber = 0, round;
+        int rNumber = 0, round, count;
+        double rate = 0E2D;
         Char actDoor = 'c', sugestDoor = 'c', opendDoor = 'C';
         Boolean openState = false;
        
@@ -203,6 +204,14 @@ namespace Simulatator_ProBigD
             dataFile.incrRound();
             round = dataFile.readRound();
             lbl_round.Text = ("Round " + round.ToString());
+            count = dataFile.readCorrectAns();
+
+            lbl_count.Text = count.ToString();
+            lbl_rounds.Text = round.ToString();
+            rate = (Convert.ToDouble(count) / Convert.ToDouble(round)) * 100;
+            rate = Math.Round(rate, 2);
+            lbl_rate.Text = "" + rate.ToString() + "%";
+
             Random rd = new Random();
             rNumber = rd.Next();
             ResetImages();
