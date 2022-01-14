@@ -207,8 +207,8 @@ namespace Simulatator_ProBigD
             count = dataFile.readCorrectAns();
 
             lbl_count.Text = count.ToString();
-            lbl_rounds.Text = round.ToString();
-            rate = (Convert.ToDouble(count) / Convert.ToDouble(round)) * 100;
+            lbl_rounds.Text = (round-1).ToString();
+            rate = (Convert.ToDouble(count) / Convert.ToDouble(round-1)) * 100;
             rate = Math.Round(rate, 2);
             lbl_rate.Text = "" + rate.ToString() + "%";
 
