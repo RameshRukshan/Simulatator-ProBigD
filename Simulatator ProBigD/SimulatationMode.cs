@@ -16,5 +16,10 @@ namespace Simulatator_ProBigD
         {
             InitializeComponent();
         }
+
+        private void btn_Start_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
