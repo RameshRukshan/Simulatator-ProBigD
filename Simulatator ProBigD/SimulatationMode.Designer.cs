@@ -29,6 +29,7 @@ namespace Simulatator_ProBigD
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimulatationMode));
             this.lbl_tagline = new System.Windows.Forms.Label();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -54,6 +55,7 @@ namespace Simulatator_ProBigD
             this.lbl_Correct = new System.Windows.Forms.Label();
             this.lbl_Incorrect = new System.Windows.Forms.Label();
             this.lbl_winRate = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.guna2ShadowPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -389,6 +391,11 @@ namespace Simulatator_ProBigD
             this.lbl_winRate.TabIndex = 9;
             this.lbl_winRate.Text = "N/A";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            // 
             // SimulatationMode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -414,6 +421,7 @@ namespace Simulatator_ProBigD
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SimulatationMode";
             this.Text = "SimulatationMode";
+            this.Load += new System.EventHandler(this.SimulatationMode_Load);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -447,5 +455,6 @@ namespace Simulatator_ProBigD
         private System.Windows.Forms.Label lbl_Correct;
         private System.Windows.Forms.Label lbl_Rounds;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Timer timer1;
     }
 }

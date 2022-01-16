@@ -16,6 +16,17 @@ namespace Simulatator_ProBigD
             string readText = File.ReadAllText("filename.txt");  // Read the contents of the file
         }
 
+        public void writelog(String Door)
+        {
+            File.AppendAllText("log.txt", " "+Door+" ");
+        }
+
+        public string readLog()
+        {
+            String data = Convert.ToString(File.ReadAllText("log.txt"));
+            return data;
+        }
+
         public void writeSelectedtDoor(String doorNum)
         {
             File.WriteAllText("currentDoor.txt", doorNum);
