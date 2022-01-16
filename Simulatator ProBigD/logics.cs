@@ -18,9 +18,12 @@ namespace Simulatator_ProBigD
             rNumber = r.Next();
         }
 
+        files f = new files();
+
         public void assignCompDoor()
         {
             generateRandomeNumber();
+            f.writelog(rNumber.ToString());
 
             if (rNumber % 3 == 0)
                 activeDoor = 'A';
@@ -28,8 +31,9 @@ namespace Simulatator_ProBigD
                 activeDoor = 'B';
             else if (rNumber % 3 == 2)
                 activeDoor = 'C';
-
+            System.Threading.Thread.Sleep(20);
             generateRandomeNumber();
+            f.writelog(rNumber.ToString());
 
             if (rNumber % 3 == 0)
                 selDoor = 'A';

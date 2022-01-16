@@ -15,6 +15,14 @@ namespace Simulatator_ProBigD
         public Log()
         {
             InitializeComponent();
+            lbl_logs.Text = f.readLog();
+        }
+
+        files f = new files();
+
+        private void Log_Load(object sender, EventArgs e)
+        {
+            lbl_logs.Text = f.readLog();
         }
     }
 }

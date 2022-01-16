@@ -18,7 +18,12 @@ namespace Simulatator_ProBigD
 
         public void writelog(String Door)
         {
-            File.AppendAllText("log.txt", " "+Door+" ");
+            File.AppendAllText("log.txt", ""+Door+"    ");
+        }
+
+        public void clearLog()
+        {
+            File.WriteAllText("log.txt"," ");
         }
 
         public string readLog()

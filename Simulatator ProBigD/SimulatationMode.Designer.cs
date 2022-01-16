@@ -29,7 +29,6 @@ namespace Simulatator_ProBigD
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimulatationMode));
             this.lbl_tagline = new System.Windows.Forms.Label();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -45,18 +44,18 @@ namespace Simulatator_ProBigD
             this.btn_Start = new Guna.UI2.WinForms.Guna2Button();
             this.btn_chart = new Guna.UI2.WinForms.Guna2Button();
             this.btn_logs = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_stop = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lbl_Rounds = new System.Windows.Forms.Label();
-            this.lbl_Correct = new System.Windows.Forms.Label();
-            this.lbl_Incorrect = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lbl_winRate = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbl_Incorrect = new System.Windows.Forms.Label();
+            this.lbl_Correct = new System.Windows.Forms.Label();
+            this.lbl_Rounds = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.img_loading = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ShadowPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_loading)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_tagline
@@ -264,32 +263,7 @@ namespace Simulatator_ProBigD
             this.btn_logs.TabIndex = 15;
             this.btn_logs.Text = "Log File";
             this.btn_logs.UseTransparentBackground = true;
-            // 
-            // btn_stop
-            // 
-            this.btn_stop.Animated = true;
-            this.btn_stop.AutoRoundedCorners = true;
-            this.btn_stop.BackColor = System.Drawing.Color.Transparent;
-            this.btn_stop.BorderRadius = 16;
-            this.btn_stop.CheckedState.Parent = this.btn_stop;
-            this.btn_stop.CustomImages.Parent = this.btn_stop;
-            this.btn_stop.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_stop.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_stop.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_stop.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_stop.DisabledState.Parent = this.btn_stop;
-            this.btn_stop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_stop.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_stop.ForeColor = System.Drawing.Color.White;
-            this.btn_stop.HoverState.Parent = this.btn_stop;
-            this.btn_stop.Image = ((System.Drawing.Image)(resources.GetObject("btn_stop.Image")));
-            this.btn_stop.Location = new System.Drawing.Point(362, 369);
-            this.btn_stop.Name = "btn_stop";
-            this.btn_stop.ShadowDecoration.Parent = this.btn_stop;
-            this.btn_stop.Size = new System.Drawing.Size(142, 35);
-            this.btn_stop.TabIndex = 15;
-            this.btn_stop.Text = "Stop Run";
-            this.btn_stop.UseTransparentBackground = true;
+            this.btn_logs.Click += new System.EventHandler(this.btn_logs_Click);
             // 
             // guna2ShadowPanel1
             // 
@@ -308,26 +282,6 @@ namespace Simulatator_ProBigD
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(221, 294);
             this.guna2ShadowPanel1.TabIndex = 16;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 24);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Rounds";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 146);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 20);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Incorrect Door Rounds";
             // 
             // label5
             // 
@@ -350,35 +304,15 @@ namespace Simulatator_ProBigD
             this.label6.TabIndex = 9;
             this.label6.Text = "Properbility of Win";
             // 
-            // lbl_Rounds
+            // label4
             // 
-            this.lbl_Rounds.AutoSize = true;
-            this.lbl_Rounds.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rounds.Location = new System.Drawing.Point(46, 47);
-            this.lbl_Rounds.Name = "lbl_Rounds";
-            this.lbl_Rounds.Size = new System.Drawing.Size(42, 24);
-            this.lbl_Rounds.TabIndex = 9;
-            this.lbl_Rounds.Text = "N/A";
-            // 
-            // lbl_Correct
-            // 
-            this.lbl_Correct.AutoSize = true;
-            this.lbl_Correct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Correct.Location = new System.Drawing.Point(46, 107);
-            this.lbl_Correct.Name = "lbl_Correct";
-            this.lbl_Correct.Size = new System.Drawing.Size(42, 24);
-            this.lbl_Correct.TabIndex = 9;
-            this.lbl_Correct.Text = "N/A";
-            // 
-            // lbl_Incorrect
-            // 
-            this.lbl_Incorrect.AutoSize = true;
-            this.lbl_Incorrect.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Incorrect.Location = new System.Drawing.Point(46, 173);
-            this.lbl_Incorrect.Name = "lbl_Incorrect";
-            this.lbl_Incorrect.Size = new System.Drawing.Size(42, 24);
-            this.lbl_Incorrect.TabIndex = 9;
-            this.lbl_Incorrect.Text = "N/A";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(13, 146);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(171, 20);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Incorrect Door Rounds";
             // 
             // lbl_winRate
             // 
@@ -391,10 +325,60 @@ namespace Simulatator_ProBigD
             this.lbl_winRate.TabIndex = 9;
             this.lbl_winRate.Text = "N/A";
             // 
-            // timer1
+            // lbl_Incorrect
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 500;
+            this.lbl_Incorrect.AutoSize = true;
+            this.lbl_Incorrect.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Incorrect.Location = new System.Drawing.Point(46, 173);
+            this.lbl_Incorrect.Name = "lbl_Incorrect";
+            this.lbl_Incorrect.Size = new System.Drawing.Size(42, 24);
+            this.lbl_Incorrect.TabIndex = 9;
+            this.lbl_Incorrect.Text = "N/A";
+            // 
+            // lbl_Correct
+            // 
+            this.lbl_Correct.AutoSize = true;
+            this.lbl_Correct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Correct.Location = new System.Drawing.Point(46, 107);
+            this.lbl_Correct.Name = "lbl_Correct";
+            this.lbl_Correct.Size = new System.Drawing.Size(42, 24);
+            this.lbl_Correct.TabIndex = 9;
+            this.lbl_Correct.Text = "N/A";
+            // 
+            // lbl_Rounds
+            // 
+            this.lbl_Rounds.AutoSize = true;
+            this.lbl_Rounds.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Rounds.Location = new System.Drawing.Point(46, 47);
+            this.lbl_Rounds.Name = "lbl_Rounds";
+            this.lbl_Rounds.Size = new System.Drawing.Size(42, 24);
+            this.lbl_Rounds.TabIndex = 9;
+            this.lbl_Rounds.Text = "N/A";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 24);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Rounds";
+            // 
+            // img_loading
+            // 
+            this.img_loading.BackColor = System.Drawing.Color.Transparent;
+            this.img_loading.FillColor = System.Drawing.Color.Transparent;
+            this.img_loading.Image = ((System.Drawing.Image)(resources.GetObject("img_loading.Image")));
+            this.img_loading.ImageRotate = 0F;
+            this.img_loading.Location = new System.Drawing.Point(284, 284);
+            this.img_loading.Name = "img_loading";
+            this.img_loading.ShadowDecoration.Parent = this.img_loading;
+            this.img_loading.Size = new System.Drawing.Size(231, 56);
+            this.img_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.img_loading.TabIndex = 17;
+            this.img_loading.TabStop = false;
+            this.img_loading.UseTransparentBackground = true;
             // 
             // SimulatationMode
             // 
@@ -402,8 +386,8 @@ namespace Simulatator_ProBigD
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.img_loading);
             this.Controls.Add(this.guna2ShadowPanel1);
-            this.Controls.Add(this.btn_stop);
             this.Controls.Add(this.btn_logs);
             this.Controls.Add(this.btn_chart);
             this.Controls.Add(this.btn_Start);
@@ -424,6 +408,7 @@ namespace Simulatator_ProBigD
             this.Load += new System.EventHandler(this.SimulatationMode_Load);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_loading)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,7 +430,6 @@ namespace Simulatator_ProBigD
         private Guna.UI2.WinForms.Guna2Button btn_Start;
         private Guna.UI2.WinForms.Guna2Button btn_chart;
         private Guna.UI2.WinForms.Guna2Button btn_logs;
-        private Guna.UI2.WinForms.Guna2Button btn_stop;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -455,6 +439,6 @@ namespace Simulatator_ProBigD
         private System.Windows.Forms.Label lbl_Correct;
         private System.Windows.Forms.Label lbl_Rounds;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Timer timer1;
+        private Guna.UI2.WinForms.Guna2PictureBox img_loading;
     }
 }

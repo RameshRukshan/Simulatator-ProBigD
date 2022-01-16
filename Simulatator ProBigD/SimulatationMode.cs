@@ -23,10 +23,14 @@ namespace Simulatator_ProBigD
 
         private void btn_Start_Click(object sender, EventArgs e)
         {
+            img_loading.Visible = true;
             rounds = Convert.ToInt32(txt_rounds.Text);
             countC = 0; countInc = 0; rate = 0;
-            for(int c = 1; c <= rounds; c++)
+            f.clearLog();
+            f.writelog("\n");
+            for (int c = 1; c <= rounds; c++)
             {
+                
                 bool status = false;
                 //lg.assignCompDoor();
                 if (opt_keep.Checked)
@@ -46,11 +50,6 @@ namespace Simulatator_ProBigD
                     countInc = countInc + 1;
                 }
 
-                if (btn_stop.Checked)
-                {
-                    break;
-                }
-
                 f.writelog(lg.retActDoorS());
                 f.writelog(lg.retSelDoor());
                 f.writelog("\n");
@@ -62,9 +61,14 @@ namespace Simulatator_ProBigD
                 rate = (Convert.ToDouble(countC) / Convert.ToDouble(c)) * 100;
                 rate = Math.Round(rate, 2);
                 lbl_winRate.Text = "" + rate.ToString() + "%";
-                timer1.Start();
-                c = c + 1;
             }
+            img_loading.Visible = false;
+        }
+
+        private void btn_logs_Click(object sender, EventArgs e)
+        {
+            Log lg = new Log();
+            lg.Show();
         }
 
         logics lg = new logics();
@@ -72,6 +76,7 @@ namespace Simulatator_ProBigD
         private void SimulatationMode_Load(object sender, EventArgs e)
         {
             rounds = 0;
+            img_loading.Visible = false;
         }
     }
 }
