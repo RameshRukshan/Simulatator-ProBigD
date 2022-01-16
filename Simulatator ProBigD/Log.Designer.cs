@@ -55,7 +55,7 @@ namespace Simulatator_ProBigD
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(663, 12);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(539, 12);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
@@ -65,16 +65,16 @@ namespace Simulatator_ProBigD
             // 
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.lbl_logs);
-            this.panel1.Location = new System.Drawing.Point(76, 69);
+            this.panel1.Location = new System.Drawing.Point(46, 97);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(582, 353);
+            this.panel1.Size = new System.Drawing.Size(502, 327);
             this.panel1.TabIndex = 10;
             // 
             // lbl_logs
             // 
             this.lbl_logs.AutoSize = true;
             this.lbl_logs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_logs.Location = new System.Drawing.Point(31, 50);
+            this.lbl_logs.Location = new System.Drawing.Point(19, 16);
             this.lbl_logs.Name = "lbl_logs";
             this.lbl_logs.Size = new System.Drawing.Size(50, 24);
             this.lbl_logs.TabIndex = 0;
@@ -89,7 +89,7 @@ namespace Simulatator_ProBigD
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(720, 457);
+            this.ClientSize = new System.Drawing.Size(596, 457);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.lbl_tagline);

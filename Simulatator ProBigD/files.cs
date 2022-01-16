@@ -23,7 +23,7 @@ namespace Simulatator_ProBigD
 
         public void clearLog()
         {
-            File.WriteAllText("log.txt"," ");
+            File.WriteAllText("log.txt","");
         }
 
         public string readLog()

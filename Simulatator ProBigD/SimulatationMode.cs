@@ -27,10 +27,8 @@ namespace Simulatator_ProBigD
             rounds = Convert.ToInt32(txt_rounds.Text);
             countC = 0; countInc = 0; rate = 0;
             f.clearLog();
-            f.writelog("\n");
             for (int c = 1; c <= rounds; c++)
             {
-                
                 bool status = false;
                 //lg.assignCompDoor();
                 if (opt_keep.Checked)
