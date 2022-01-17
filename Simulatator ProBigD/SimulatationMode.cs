@@ -20,23 +20,30 @@ namespace Simulatator_ProBigD
         double rate;
 
         files f = new files();
+        
 
         private void btn_Start_Click(object sender, EventArgs e)
         {
+           
             img_loading.Visible = true;
             rounds = Convert.ToInt32(txt_rounds.Text);
             countC = 0; countInc = 0; rate = 0;
-            f.clearLog();
+            f.clearLog(); f.writelog("\n");
+
             for (int c = 1; c <= rounds; c++)
             {
-                bool status = false;
+                bool status = false, mode = false;
                 //lg.assignCompDoor();
                 if (opt_keep.Checked)
                 {
                     status = lg.keepModeSt();
+                    mode = false;
+                    
                 }else if (opt_change.Checked)
                 {
                     status = lg.changeModSt();
+                    
+                    mode = true;
                 }
 
                 if(status == true)
@@ -50,6 +57,11 @@ namespace Simulatator_ProBigD
 
                 f.writelog(lg.retActDoorS());
                 f.writelog(lg.retSelDoor());
+                if (mode == false)
+                    f.writelog("  Keep      ");
+                else
+                    f.writelog("  Change    ");
+                f.writelog("" + c.ToString());
                 f.writelog("\n");
 
                 lbl_Rounds.Text = c.ToString();

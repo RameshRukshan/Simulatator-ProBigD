@@ -23,7 +23,7 @@ namespace Simulatator_ProBigD
         public void assignCompDoor()
         {
             generateRandomeNumber();
-            f.writelog(rNumber.ToString());
+            //f.writelog(rNumber.ToString());
 
             if (rNumber % 3 == 0)
                 activeDoor = 'A';
@@ -33,7 +33,7 @@ namespace Simulatator_ProBigD
                 activeDoor = 'C';
             System.Threading.Thread.Sleep(20);
             generateRandomeNumber();
-            f.writelog(rNumber.ToString());
+            //f.writelog(rNumber.ToString());
 
             if (rNumber % 3 == 0)
                 selDoor = 'A';

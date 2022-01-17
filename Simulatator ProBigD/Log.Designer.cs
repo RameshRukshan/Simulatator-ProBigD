@@ -35,6 +35,7 @@ namespace Simulatator_ProBigD
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_logs = new System.Windows.Forms.Label();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,10 +74,10 @@ namespace Simulatator_ProBigD
             // lbl_logs
             // 
             this.lbl_logs.AutoSize = true;
-            this.lbl_logs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_logs.Location = new System.Drawing.Point(19, 16);
+            this.lbl_logs.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_logs.Location = new System.Drawing.Point(4, 12);
             this.lbl_logs.Name = "lbl_logs";
-            this.lbl_logs.Size = new System.Drawing.Size(50, 24);
+            this.lbl_logs.Size = new System.Drawing.Size(48, 22);
             this.lbl_logs.TabIndex = 0;
             this.lbl_logs.Text = "label";
             // 
@@ -84,12 +85,23 @@ namespace Simulatator_ProBigD
             // 
             this.guna2DragControl1.TargetControl = this;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(65, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(406, 22);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Correct Door   Selected Door  C|K Status   Round";
+            // 
             // Log
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(596, 457);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.lbl_tagline);
@@ -111,5 +123,6 @@ namespace Simulatator_ProBigD
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_logs;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private System.Windows.Forms.Label label1;
     }
 }
