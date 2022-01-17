@@ -82,6 +82,12 @@
     <Compile Include="info.Designer.cs">
       <DependentUpon>info.cs</DependentUpon>
     </Compile>
+    <Compile Include="loadingBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loadingBar.Designer.cs">
+      <DependentUpon>loadingBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Log.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="info.resx">
       <DependentUpon>info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loadingBar.resx">
+      <DependentUpon>loadingBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Log.resx">
       <DependentUpon>Log.cs</DependentUpon>
