@@ -203,6 +203,7 @@ namespace Simulatator_ProBigD
         {
             dataFile.incrRound();
             round = dataFile.readRound();
+           
             lbl_round.Text = ("Round " + round.ToString());
             count = dataFile.readCorrectAns();
 
@@ -211,6 +212,13 @@ namespace Simulatator_ProBigD
             rate = (Convert.ToDouble(count) / Convert.ToDouble(round-1)) * 100;
             rate = Math.Round(rate, 2);
             lbl_rate.Text = "" + rate.ToString() + "%";
+
+            if (Convert.ToInt32(round) < 2)
+            {
+                lbl_count.Text = "N/A";
+                lbl_rate.Text = "N/A";
+                lbl_rounds.Text = "N/A";
+            }
 
             Random rd = new Random();
             rNumber = rd.Next();
