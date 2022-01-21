@@ -1,6 +1,7 @@
 # Simulatator-ProBigD
 Simulatator of chanageing item hidden door according to open incorrect door Simulatate with big data and Game Mode. Explained video URL :- https://youtu.be/hhELB8W0w-4
-
+# Consept
+<br> There is three doors and behind the one door there is Compose available. In Game mode player shuld select one door. Then computer will open one empty door and give chance to user for change the selected door to other closed door. May be Selected door is the correct door or may be the switched door is the correct one.<i><br>Note: Compose will randomly assign to door when form load.</i><br>
 <p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><span style="font-size:11pt;font-family:Arial;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;"><span style="border:none;display:inline-block;overflow:hidden;width:624px;height:336px;"><img src="https://lh3.googleusercontent.com/XIVzk_vSV26Tksfkey31nyfWpbOmsVVmUdE7MCAF9eyRKaxlhCg3oKy6U9lm_DxfBjMWjyrWBicwVjnzDD6qzV4E8qkSqM2OXiRQDmPCw51pDIQWJ5odBLQ7JYpyuUcw8oHRXLqk" width="624" height="336"></span></span></p>
 <p><br></p>
 <p><br></p>
